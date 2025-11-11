@@ -1,0 +1,39 @@
+CREATE TABLE Clientes(
+	DNI INT PRIMARY KEY,
+	Nombre VARCHAR(25) NOT NULL,
+	Apellido VARCHAR(25) NOT NULL,
+	Telefono VARCHAR(25) NOT NULL UNIQUE
+)
+
+CREATE TABLE Especies(
+	ID INT IDENTITY(1,1) PRIMARY KEY,
+	Nombre VARCHAR(25) NOT NULL UNIQUE,
+	EdadMadurez INT NOT NULL,
+	PesoPromedio DECIMAL(5,2) NOT NULL 
+)
+
+/*CREATE TABLE Especies(
+	ID INT IDENTITY(1,1),
+	Nombre VARCHAR(25) PRIMARY KEY,
+	EdadMadurez INT,
+	PesoPromedio DECIMAL(5,2)
+)*/
+
+CREATE TABLE Animales(
+	ID INT IDENTITY(1,1) PRIMARY KEY,
+	Nombre VARCHAR(25) NOT NULL,
+	Peso DECIMAL(5,2) NOT NULL,
+	Edad INT NOT NULL,
+	Cliente_ID INT NOT NULL,
+	Especie_ID INT NOT NULL,
+	FOREIGN KEY (Cliente_ID) REFERENCES Clientes(DNI),
+	FOREIGN KEY (Especie_ID) REFERENCES Especies(ID)
+)
+
+CREATE TABLE Usuarios(
+	UserName VARCHAR(25) PRIMARY KEY,
+	UserPassword VARCHAR(25) NOT NULL
+)
+
+INSERT INTO Usuarios (UserName, UserPassword) 
+VALUES ('admin', 'admin')
