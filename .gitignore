@@ -419,3 +419,6 @@ FodyWeavers.xsd
 
 # Archivo de configuracion
 .App.config
+
+#Carpeta .vs
+.vs
