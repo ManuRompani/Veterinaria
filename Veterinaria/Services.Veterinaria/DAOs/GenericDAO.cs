@@ -20,6 +20,7 @@ namespace Services.Veterinaria.DAOs
             dbConnection.Open();
         }
         
+        //Esto es para desconectar la base de datos
         public void desconectar()
         {
             dbConnection.Close();
