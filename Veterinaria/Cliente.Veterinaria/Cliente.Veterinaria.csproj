@@ -77,5 +77,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Services.Veterinaria\Services.Veterinaria.csproj">
+      <Project>{59883491-5acb-4ee8-a34a-e8216c756960}</Project>
+      <Name>Services.Veterinaria</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
