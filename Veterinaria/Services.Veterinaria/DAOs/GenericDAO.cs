@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
@@ -21,8 +22,6 @@ namespace Services.Veterinaria.DAOs
             string sConnect = ConfigurationManager.ConnectionStrings["LocalConnection"].ToString();
 
             _dbConnection = new SqlConnection(sConnect);
-
-            _dbConnection.Open();
         }
 
 
@@ -56,6 +55,9 @@ namespace Services.Veterinaria.DAOs
 
         protected void ejecutarLectura()
         {
+            if(this._dbConnection.State == ConnectionState.Closed)
+                this._dbConnection.Open();
+
             this._lector = _comando.ExecuteReader();
         }
 

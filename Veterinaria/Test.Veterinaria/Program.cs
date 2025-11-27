@@ -12,9 +12,10 @@ namespace Test.Veterinaria
     {
         static void Main(string[] args)
         {
+            //===================CLIENTE===================
             Cliente cliente = null;
             ClienteDAO clienteDAO = new ClienteDAO();
-
+            Console.WriteLine("=============CLIENTE=============");
             cliente = clienteDAO.getByDNI(1234);
             if (cliente != null)
             {
@@ -26,6 +27,33 @@ namespace Test.Veterinaria
             else
             {
                 Console.WriteLine("Cliente no encontrado");
+            }
+
+
+            //===================USUARIO===================
+            Usuario usuario = new Usuario
+            {
+                UserName = "admin",
+                UserPassword = "admin"
+            };
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
+
+            Console.WriteLine("\n\n=============USUARIO=============");
+            Console.WriteLine("Primer inicio:" + usuarioDAO.isFirstLogin());
+            Console.WriteLine("Credenciales validas:" + usuarioDAO.validarUsuario(usuario));
+            
+            if (usuarioDAO.isFirstLogin())
+            {
+                try
+                {
+                    usuarioDAO.registrarUsuario(usuario);
+                    Console.WriteLine("Usuario creado exitosamente");
+                }
+                catch(Exception ex)
+                {
+                    throw ex;
+                }
+                Console.WriteLine("Credenciales validas:" + usuarioDAO.validarUsuario(usuario));
             }
         }
     }
