@@ -47,17 +47,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConfiguracionForm.cs">
+    <Compile Include="AnimalesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConfiguracionForm.Designer.cs">
-      <DependentUpon>ConfiguracionForm.cs</DependentUpon>
+    <Compile Include="AnimalesForm.Designer.cs">
+      <DependentUpon>AnimalesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="InicioForm.cs">
+    <Compile Include="ClientesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InicioForm.Designer.cs">
-      <DependentUpon>InicioForm.cs</DependentUpon>
+    <Compile Include="ClientesForm.Designer.cs">
+      <DependentUpon>ClientesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EspeciesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EspeciesForm.Designer.cs">
+      <DependentUpon>EspeciesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -73,6 +79,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AnimalesForm.resx">
+      <DependentUpon>AnimalesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientesForm.resx">
+      <DependentUpon>ClientesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

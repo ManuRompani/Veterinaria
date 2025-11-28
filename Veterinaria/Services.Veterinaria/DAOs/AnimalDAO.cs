@@ -107,9 +107,7 @@ VALUES (@nombre, @peso, @edad, @clienteId, @especieId);";
             insertarParametro("@nombre", animal.Cliente.Dni.ToString());
             insertarParametro("@nombre", animal.Especie.ID.ToString());
 
-            ejecutarLectura();
-
-            int RowsAffected = _comando.ExecuteNonQuery();
+            int RowsAffected = ejecutarConsulta();
 
             desconectar();
 

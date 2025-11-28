@@ -13,8 +13,9 @@ namespace Cliente.Veterinaria
 {
     public partial class MainForm : Form
     {
-        ConfiguracionForm _configuracionForm = null;
-        InicioForm _inicioForm = null;
+        AnimalesForm _animalesForm = null;
+        ClientesForm _clientesForm = null;
+        EspeciesForm _especiesForm = null;
 
         public MainForm()
         {
@@ -29,37 +30,53 @@ namespace Cliente.Veterinaria
             Application.Exit();
         }
 
-        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // IsDisposed es un booleano que se pone en true cuando se cierra un formulario, los recursos se liberan y este no puede ser reutilziado
             // Entonces validamos si se encuentra en ese estado o si es null y en caso de que se cumpla alguna de las condiciones creamos uno nuevo
 
-            if (this._inicioForm is null || _inicioForm.IsDisposed)
+            if (this._clientesForm is null || _clientesForm.IsDisposed)
             {
-                _inicioForm = new InicioForm();
-                _inicioForm.WindowState = FormWindowState.Maximized;
-                _inicioForm.MdiParent = this;
-                _inicioForm.Show();
+                _clientesForm = new ClientesForm();
+                _clientesForm.WindowState = FormWindowState.Maximized;
+                _clientesForm.MdiParent = this;
+                _clientesForm.Show();
             }
             
-            _inicioForm.Activate();
+            _clientesForm.Activate();
         }
 
-        private void configuraciónToolStripMenuItem_Click(object sender, EventArgs e)
+        private void animalesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // IsDisposed es un booleano que se pone en true cuando se cierra un formulario, los recursos se liberan y este no puede ser reutilizado
             // Entonces validamos si se encuentra en ese estado o si es null y en caso de que se cumpla alguna de las condiciones creamos uno nuevo
 
-            if (this._configuracionForm is null || _configuracionForm.IsDisposed)
+            if (this._animalesForm is null || _animalesForm.IsDisposed)
             {
-                this._configuracionForm = new ConfiguracionForm();
-                _configuracionForm.WindowState = FormWindowState.Maximized;
-                _configuracionForm.MdiParent = this;
-                _configuracionForm.Show();
+                this._animalesForm = new AnimalesForm();
+                _animalesForm.WindowState = FormWindowState.Maximized;
+                _animalesForm.MdiParent = this;
+                _animalesForm.Show();
             }
 
-            _configuracionForm.Activate();
+            _animalesForm.Activate();
 
+        }
+
+        private void especiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // IsDisposed es un booleano que se pone en true cuando se cierra un formulario, los recursos se liberan y este no puede ser reutilizado
+            // Entonces validamos si se encuentra en ese estado o si es null y en caso de que se cumpla alguna de las condiciones creamos uno nuevo
+
+            if (this._especiesForm is null || _especiesForm.IsDisposed)
+            {
+                this._especiesForm = new EspeciesForm();
+                _especiesForm.WindowState = FormWindowState.Maximized;
+                _especiesForm.MdiParent = this;
+                _especiesForm.Show();
+            }
+
+            _especiesForm.Activate();
         }
     }
 }

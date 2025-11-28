@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Cliente.Veterinaria
 {
-    public partial class ConfiguracionForm : Form
+    public partial class AnimalesForm : Form
     {
-        public ConfiguracionForm()
+        public AnimalesForm()
         {
             InitializeComponent();
         }
