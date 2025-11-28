@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAOs\AnimalDAO.cs" />
     <Compile Include="DAOs\ClienteDAO.cs" />
     <Compile Include="DAOs\GenericDAO.cs" />
     <Compile Include="DAOs\UsuarioDAO.cs" />
@@ -52,6 +53,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Exceptions\LongitudInvalidaException.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
