@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -11,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Cliente.Veterinaria
 {
-    public partial class Form1 : Form
+    public partial class ConfiguracionForm : Form
     {
-        public Form1()
+        public ConfiguracionForm()
         {
             InitializeComponent();
         }

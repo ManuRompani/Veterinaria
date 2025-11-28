@@ -17,12 +17,19 @@ namespace Cliente.Veterinaria
         [STAThread]
         static void Main()
         {
-            GenericDAO daoprueba = new GenericDAO();
-            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-            
+            Application.Run(new LoginForm());
+            //
+            //=============ESTRUCTURA GENERAL===============
+            //
+            //  ¡¡Si es la primera vez que se inicia a la app se crea una cuenta de usuario!!
+            //
+            //  LoginForm ----> LoginValido? --- SI ---> MainForm |-----> InicioForm (Informacion sobre clientes, ABM, etc)
+            //      |               |                             |-----> ConfiguracionForm (Para agregar especies, usuarios, etc)
+            //      |               NO
+            //      -----------------
+            //
         }
     }
 }
