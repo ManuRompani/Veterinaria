@@ -55,20 +55,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD:Veterinaria/Cliente.Veterinaria/InicioForm.Designer.cs
-            this.ClientSize = new System.Drawing.Size(1026, 582);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
-            this.Name = "InicioForm";
-            this.Text = "InicioForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
 
-=======
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "EspeciesForm";
->>>>>>> origin/test:Veterinaria/Cliente.Veterinaria/EspeciesForm.Designer.cs
         }
 
         #endregion

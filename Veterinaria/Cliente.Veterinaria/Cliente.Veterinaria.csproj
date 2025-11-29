@@ -59,10 +59,10 @@
     <Compile Include="ClientesForm.Designer.cs">
       <DependentUpon>ClientesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EspeciesForm.cs">
+    <Compile Include="Ventanas Especies\EspeciesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EspeciesForm.Designer.cs">
+    <Compile Include="Ventanas Especies\EspeciesForm.Designer.cs">
       <DependentUpon>EspeciesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
@@ -79,19 +79,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
-    <EmbeddedResource Include="ConfiguracionForm.resx">
-      <DependentUpon>ConfiguracionForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InicioForm.resx">
-      <DependentUpon>InicioForm.cs</DependentUpon>
-=======
     <EmbeddedResource Include="Ventanas Animales\AgregarAnimalesForm.resx">
       <DependentUpon>AgregarAnimalesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClientesForm.resx">
       <DependentUpon>ClientesForm.cs</DependentUpon>
->>>>>>> origin/test
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -108,6 +100,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Ventanas Animales\EliminarAnimalesForm.resx">
+      <DependentUpon>EliminarAnimalesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas Animales\ReportePesosAnimalesForm.resx">
+      <DependentUpon>ReportePesosAnimalesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas Animales\VerListadoAnimalesForm.resx">
+      <DependentUpon>VerListadoAnimalesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas Especies\EspeciesForm.resx">
+      <DependentUpon>EspeciesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
