@@ -14,6 +14,10 @@ namespace Services.Veterinaria.Model
         public string Apellido { get; set; }
         public string Telefono { get; set; }
 
+        /// <summary>
+        /// Propiedad que devuelve el nombre y apellido en un solo string
+        /// </summary>
+        public string NombreCompleto => $"{this.Nombre} {this.Apellido}";
         
     }
 

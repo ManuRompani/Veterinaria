@@ -79,6 +79,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ventanas Animales\EliminarAnimalesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas Animales\EliminarAnimalesForm.Designer.cs">
+      <DependentUpon>EliminarAnimalesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas Animales\ModificarAnimalesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas Animales\ModificarAnimalesForm.Designer.cs">
+      <DependentUpon>ModificarAnimalesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas Animales\ReportePesosAnimalesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas Animales\ReportePesosAnimalesForm.Designer.cs">
+      <DependentUpon>ReportePesosAnimalesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas Animales\VerListadoAnimalesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas Animales\VerListadoAnimalesForm.Designer.cs">
+      <DependentUpon>VerListadoAnimalesForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Ventanas Animales\AgregarAnimalesForm.resx">
       <DependentUpon>AgregarAnimalesForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,6 +124,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Ventanas Animales\EliminarAnimalesForm.resx">
+      <DependentUpon>EliminarAnimalesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas Animales\ReportePesosAnimalesForm.resx">
+      <DependentUpon>ReportePesosAnimalesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas Animales\VerListadoAnimalesForm.resx">
+      <DependentUpon>VerListadoAnimalesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
