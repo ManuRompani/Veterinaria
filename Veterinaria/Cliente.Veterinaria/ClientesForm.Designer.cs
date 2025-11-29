@@ -1,6 +1,6 @@
 ﻿namespace Cliente.Veterinaria
 {
-    partial class ConfiguracionForm
+    partial class ClientesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,7 @@
         {
             this.SuspendLayout();
             // 
+<<<<<<< HEAD:Veterinaria/Cliente.Veterinaria/ConfiguracionForm.Designer.cs
             // ConfiguracionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -37,6 +38,15 @@
             this.ClientSize = new System.Drawing.Size(999, 586);
             this.Name = "ConfiguracionForm";
             this.Text = "ConfiguracionForm";
+=======
+            // ClientesForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "ClientesForm";
+            this.Text = "ClientesForm";
+>>>>>>> origin/test:Veterinaria/Cliente.Veterinaria/ClientesForm.Designer.cs
             this.ResumeLayout(false);
 
         }

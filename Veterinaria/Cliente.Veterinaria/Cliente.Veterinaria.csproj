@@ -47,17 +47,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConfiguracionForm.cs">
+    <Compile Include="Ventanas Animales\AgregarAnimalesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConfiguracionForm.Designer.cs">
-      <DependentUpon>ConfiguracionForm.cs</DependentUpon>
+    <Compile Include="Ventanas Animales\AgregarAnimalesForm.Designer.cs">
+      <DependentUpon>AgregarAnimalesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="InicioForm.cs">
+    <Compile Include="ClientesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InicioForm.Designer.cs">
-      <DependentUpon>InicioForm.cs</DependentUpon>
+    <Compile Include="ClientesForm.Designer.cs">
+      <DependentUpon>ClientesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EspeciesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EspeciesForm.Designer.cs">
+      <DependentUpon>EspeciesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -73,11 +79,19 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <EmbeddedResource Include="ConfiguracionForm.resx">
       <DependentUpon>ConfiguracionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InicioForm.resx">
       <DependentUpon>InicioForm.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="Ventanas Animales\AgregarAnimalesForm.resx">
+      <DependentUpon>AgregarAnimalesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientesForm.resx">
+      <DependentUpon>ClientesForm.cs</DependentUpon>
+>>>>>>> origin/test
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

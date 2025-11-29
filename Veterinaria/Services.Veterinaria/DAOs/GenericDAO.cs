@@ -25,43 +25,64 @@ namespace Services.Veterinaria.DAOs
         }
 
 
-        //Metodos privados de los daos para crear consultas sin repetir codigo
+        //============== Metodos privados de los daos para crear consultas sin repetir codigo ==============
         //
-        //Esto es para desconectar la base de datos
+        //
+        /// <summary>
+        /// Cierra el lector y la conexion
+        /// </summary>
         protected void desconectar()
         {
             if (_lector != null)
                 _lector.Close();
-            
+
             _dbConnection.Close();
         }
 
-        
+        /// <summary>
+        /// Agrega un parametro al comando
+        /// </summary>
         protected void insertarParametro(string nombre, string valor)
         {
             DbParameter parametro = _comando.CreateParameter();
-            
+
             parametro.ParameterName = nombre;
             parametro.Value = valor;
-            
+
             _comando.Parameters.Add(parametro);
         }
 
+        /// <summary>
+        /// Setea la consulta sql en el comando
+        /// </summary>
         protected void setearConsulta(string consulta)
         {
             _comando = _dbConnection.CreateCommand();
             _comando.CommandText = consulta;
         }
 
+        /// <summary>
+        /// Ejecuta un SELECT y abre el lector
+        /// </summary>
         protected void ejecutarLectura()
         {
-            if(this._dbConnection.State == ConnectionState.Closed)
+            if (this._dbConnection.State == ConnectionState.Closed)
                 this._dbConnection.Open();
 
             this._lector = _comando.ExecuteReader();
-
-
         }
+
+        /// <summary>
+        /// Ejecuta un INSERT, UPDATE o DELETE y devuelve el numero de filas afectadas
+        /// </summary>
+        protected int ejecutarConsulta()
+        {
+            if (this._dbConnection.State == ConnectionState.Closed)
+                this._dbConnection.Open();
+
+            return _comando.ExecuteNonQuery();
+        }
+
 
     }
 }
