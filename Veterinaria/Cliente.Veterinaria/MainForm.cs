@@ -13,7 +13,7 @@ namespace Cliente.Veterinaria
 {
     public partial class MainForm : Form
     {
-        AnimalesForm _animalesForm = null;
+        AgregarAnimalesForm _animalesForm = null;
         ClientesForm _clientesForm = null;
         EspeciesForm _especiesForm = null;
 
@@ -53,7 +53,7 @@ namespace Cliente.Veterinaria
 
             if (this._animalesForm is null || _animalesForm.IsDisposed)
             {
-                this._animalesForm = new AnimalesForm();
+                this._animalesForm = new AgregarAnimalesForm();
                 _animalesForm.WindowState = FormWindowState.Maximized;
                 _animalesForm.MdiParent = this;
                 _animalesForm.Show();

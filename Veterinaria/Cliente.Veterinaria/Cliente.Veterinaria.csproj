@@ -47,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnimalesForm.cs">
+    <Compile Include="Ventanas Animales\AgregarAnimalesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AnimalesForm.Designer.cs">
-      <DependentUpon>AnimalesForm.cs</DependentUpon>
+    <Compile Include="Ventanas Animales\AgregarAnimalesForm.Designer.cs">
+      <DependentUpon>AgregarAnimalesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ClientesForm.cs">
       <SubType>Form</SubType>
@@ -79,8 +79,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AnimalesForm.resx">
-      <DependentUpon>AnimalesForm.cs</DependentUpon>
+    <EmbeddedResource Include="Ventanas Animales\AgregarAnimalesForm.resx">
+      <DependentUpon>AgregarAnimalesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClientesForm.resx">
       <DependentUpon>ClientesForm.cs</DependentUpon>
