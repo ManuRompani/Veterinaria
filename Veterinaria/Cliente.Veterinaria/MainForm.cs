@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Cliente.Veterinaria
 {
     public partial class MainForm : Form
@@ -77,6 +78,11 @@ namespace Cliente.Veterinaria
             }
 
             _especiesForm.Activate();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

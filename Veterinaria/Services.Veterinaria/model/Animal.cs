@@ -12,7 +12,7 @@ namespace Services.Veterinaria.Model
         public string Nombre { get; set; }
         public decimal Peso { get; set; }
         public int Edad {  get; set; }
-        public Cliente Cliente { get; set; }
+        public Cliente ClienteDueño { get; set; }
         public Especie Especie { get; set; }
         
     }
