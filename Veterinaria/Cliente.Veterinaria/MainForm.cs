@@ -45,6 +45,15 @@ namespace Cliente.Veterinaria
             _inicioForm.Activate();
         }
 
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            _inicioForm = new InicioForm();
+            _inicioForm.WindowState = FormWindowState.Maximized;
+            _inicioForm.MdiParent = this;
+            _inicioForm.Show();
+        }
+
         private void configuraciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // IsDisposed es un booleano que se pone en true cuando se cierra un formulario, los recursos se liberan y este no puede ser reutilizado
