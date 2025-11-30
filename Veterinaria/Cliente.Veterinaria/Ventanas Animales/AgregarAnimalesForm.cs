@@ -66,39 +66,12 @@ namespace Cliente.Veterinaria
             }
         }
         
-
-        //==============IMPORTANTE CAMBIAR ESTE METODO POR GETALLCLIENTES()==========
-        private List<Services.Veterinaria.Model.Cliente> ObtenerClientesDesdeDB()
-        {
-            List<Services.Veterinaria.Model.Cliente> clientes = new List<Services.Veterinaria.Model.Cliente>();
-            string query = "SELECT DNI, NOMBRE, APELLIDO, TELEFONO FROM CLIENTES";
-
-            using (SqlConnection conexion = new SqlConnection(@"Server=YAMILAHOLIKDESK\SQLEXPRESS;Database=Veterinaria;Integrated Security=True;"))
-            using (SqlCommand cmd = new SqlCommand(query, conexion))
-            {
-                conexion.Open();
-                using (SqlDataReader lector = cmd.ExecuteReader())
-                {
-                    while (lector.Read())
-                    {
-                        clientes.Add(new Services.Veterinaria.Model.Cliente
-                        {
-                            Dni = lector.GetInt32(0),
-                            Nombre = lector.IsDBNull(1) ? null : lector.GetString(1),
-                            Apellido = lector.IsDBNull(2) ? null : lector.GetString(2),
-                            Telefono = lector.IsDBNull(3) ? null : lector.GetString(3)
-                        });
-                    }
-                }
-            }
-
-            return clientes;
-        }
-        //===========================================================================
         private void AgregarAnimalesForm_Load(object sender, EventArgs e)
         {
             EspecieDAO _especieDAO = new EspecieDAO();
-            List<Services.Veterinaria.Model.Cliente> _listaClientes = this.ObtenerClientesDesdeDB();
+            ClienteDAO _clienteDAO = new ClienteDAO();
+
+            List<Services.Veterinaria.Model.Cliente> _listaClientes = _clienteDAO.GetTodos();
             cmbCliente.DataSource = _listaClientes;
             cmbCliente.DisplayMember = "NombreCompleto";
             cmbCliente.ValueMember = "Dni";
@@ -145,5 +118,35 @@ namespace Cliente.Veterinaria
         {
             this.Close();
         }
+
+
+        //==============IMPORTANTE CAMBIAR ESTE METODO POR GETALLCLIENTES()==========
+        private List<Services.Veterinaria.Model.Cliente> ObtenerClientesDesdeDB()
+        {
+            List<Services.Veterinaria.Model.Cliente> clientes = new List<Services.Veterinaria.Model.Cliente>();
+            string query = "SELECT DNI, NOMBRE, APELLIDO, TELEFONO FROM CLIENTES";
+
+            using (SqlConnection conexion = new SqlConnection(@"Server=YAMILAHOLIKDESK\SQLEXPRESS;Database=Veterinaria;Integrated Security=True;"))
+            using (SqlCommand cmd = new SqlCommand(query, conexion))
+            {
+                conexion.Open();
+                using (SqlDataReader lector = cmd.ExecuteReader())
+                {
+                    while (lector.Read())
+                    {
+                        clientes.Add(new Services.Veterinaria.Model.Cliente
+                        {
+                            Dni = lector.GetInt32(0),
+                            Nombre = lector.IsDBNull(1) ? null : lector.GetString(1),
+                            Apellido = lector.IsDBNull(2) ? null : lector.GetString(2),
+                            Telefono = lector.IsDBNull(3) ? null : lector.GetString(3)
+                        });
+                    }
+                }
+            }
+
+            return clientes;
+        }
+        //===========================================================================
     }
 }

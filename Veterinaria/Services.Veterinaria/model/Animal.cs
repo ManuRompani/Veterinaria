@@ -1,4 +1,5 @@
 ﻿using System;
+using Services.Veterinaria.Model;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,10 +16,16 @@ namespace Services.Veterinaria.Model
         public Cliente ClienteDueño { get; set; }
         public Especie Especie { get; set; }
 
+        
         public override string ToString()
         {
             return this.Nombre;
         }
-        
+
+
+        public string NombreCliente => ClienteDueño?.NombreCompleto ?? "Sin dueño";
+        public string NombreEspecie => Especie?.Nombre ?? "Sin especie";
+
+
     }
 }

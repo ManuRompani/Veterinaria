@@ -23,6 +23,7 @@ namespace Cliente.Veterinaria
         EditarEspeciesForm _editarEspeciesForm = null;
         EliminarAnimalesForm _eliminarAnimalesForm = null;
         VerTodosAnimalesForm _verAnimalesForm = null;
+        VerReportePesosAnimales _verReportePesosAnimales = null;
         public MainForm()
         {
             InitializeComponent();
@@ -53,8 +54,7 @@ namespace Cliente.Veterinaria
         }
 
         private void configuraciónToolStripMenuItem_Click(object sender, EventArgs e) { }
-
-
+        
         private void especiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // IsDisposed es un booleano que se pone en true cuando se cierra un formulario, los recursos se liberan y este no puede ser reutilizado
@@ -70,6 +70,7 @@ namespace Cliente.Veterinaria
 
             _especiesForm.Activate();
         }
+        
         private void agregarEspecieToolStripMenuItem_Click(object sender, EventArgs e)
 
         {
@@ -110,6 +111,7 @@ namespace Cliente.Veterinaria
             _clientesForm.Activate();
         }
 
+        
         //============ANIMALES TOOLSTRIP=========================
         private void animalesToolStripMenuItem_Click(object sender, EventArgs e)
 
@@ -127,7 +129,6 @@ namespace Cliente.Veterinaria
 
             _animalesForm.Activate();
         }
-
 
         private void eliminarAnimalToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -181,6 +182,26 @@ namespace Cliente.Veterinaria
             };
 
             _verAnimalesForm.Activate();
+        }
+
+        private void verPesosDeAnimalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this._verReportePesosAnimales is null || _verReportePesosAnimales.IsDisposed)
+            {
+                this._verReportePesosAnimales = new VerReportePesosAnimales();
+                _verReportePesosAnimales.WindowState = FormWindowState.Maximized;
+                _verReportePesosAnimales.MdiParent = this;
+                _verReportePesosAnimales.Show();
+
+                this.menuStrip1.Visible = false;
+
+            }
+            _verReportePesosAnimales.FormClosed += (s, args) =>
+            {
+                this.menuStrip1.Visible = true;
+            };
+
+            _verReportePesosAnimales.Activate();
         }
     }
 }

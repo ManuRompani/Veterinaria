@@ -43,6 +43,43 @@ namespace Services.Veterinaria.DAOs
         }
 
 
+        /// <summary>
+        /// Meotodo que recorre la DB y devuelve un DataTable con Animal + Cliente Nombre + Especie Nombre
+        /// </summary>
+        /// <returns></returns>
+        public DataTable getTodosAnimalesConEspecie()
+        {
+            DataTable dataTable = null;
+            try
+            {
+                string query = @"
+            SELECT a.Nombre AS Animal,
+                   e.Nombre AS Especie,
+                   c.Nombre + ' ' + c.Apellido AS Cliente
+            FROM Animales a
+            JOIN Especies e ON a.Especie_ID = e.ID
+            JOIN Clientes c ON a.Cliente_ID = c.DNI";
+
+                setearConsulta(query);
+                ejecutarLectura();
+
+                if (_lector.HasRows)
+                {
+                    dataTable = new DataTable();
+                    dataTable.Load(_lector);
+                }
+
+                return dataTable;
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                desconectar();
+            }
+        }
 
         /// <summary>
         /// Metodo que recibe dos parametros para buscar por rango de edad en la base de datos.
@@ -53,21 +90,20 @@ namespace Services.Veterinaria.DAOs
         /// <returns></returns>
         public DataTable getPorRangoEdad(int edad1, int edad2) {
 
-            string consulta = $@"SELECT
-                            Especies.Nombre AS Especie,
-                            MAX(Animales.Peso) AS PesoMaximo,
-                            MIN(Animales.Peso) AS PesoMinimo,
-                            AVG(Animales.Peso) AS PesoPromedio
-                            FROM 
-                            Animales a
-                            JOIN 
-                            Especies e ON a.Especie_ID = e.ID
-                            WHERE 
-                            a.Edad BETWEEN @edadMin AND @edadMax
-                            GROUP BY 
-                            e.Nombre;";
-
-           
+            string consulta = @"
+        SELECT
+            e.Nombre AS Especie,
+            MAX(a.Peso) AS PesoMaximo,
+            MIN(a.Peso) AS PesoMinimo,
+            AVG(a.Peso) AS PesoPromedio
+        FROM 
+            Animales a
+        JOIN 
+            Especies e ON a.Especie_ID = e.ID
+        WHERE 
+            a.Edad BETWEEN @edadMin AND @edadMax
+        GROUP BY 
+            e.Nombre;";
 
             setearConsulta(consulta);
             
@@ -76,10 +112,10 @@ namespace Services.Veterinaria.DAOs
             insertarParametro("@edadMax", edad2.ToString());
 
             ejecutarLectura();
-
-            SqlDataAdapter da = new SqlDataAdapter((SqlCommand)_comando);
+                        
             DataTable dt = new DataTable();
-            da.Fill(dt);
+            dt.Load(_lector);   
+         
 
             desconectar();
 

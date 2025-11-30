@@ -151,6 +151,9 @@
     <EmbeddedResource Include="Ventanas Animales\EliminarAnimalesForm.resx">
       <DependentUpon>EliminarAnimalesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas Animales\VerReportePesosAnimales.resx">
+      <DependentUpon>VerReportePesosAnimales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventanas Animales\VerTodosAnimalesForm.resx">
       <DependentUpon>VerTodosAnimalesForm.cs</DependentUpon>
     </EmbeddedResource>

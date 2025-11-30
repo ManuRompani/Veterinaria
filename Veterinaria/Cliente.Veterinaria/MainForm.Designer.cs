@@ -105,6 +105,7 @@
             this.verPesosDeAnimalesToolStripMenuItem.Name = "verPesosDeAnimalesToolStripMenuItem";
             this.verPesosDeAnimalesToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.verPesosDeAnimalesToolStripMenuItem.Text = "Ver reporte de pesos";
+            this.verPesosDeAnimalesToolStripMenuItem.Click += new System.EventHandler(this.verPesosDeAnimalesToolStripMenuItem_Click);
             // 
             // especiesToolStripMenuItem
             // 
