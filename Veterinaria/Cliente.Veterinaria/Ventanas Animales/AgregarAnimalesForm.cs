@@ -17,6 +17,7 @@ namespace Cliente.Veterinaria
 {
     public partial class AgregarAnimalesForm : Form
     {
+
        
         public AgregarAnimalesForm()
         {
@@ -65,6 +66,7 @@ namespace Cliente.Veterinaria
             }
         }
         
+
         private List<Services.Veterinaria.Model.Cliente> ObtenerClientesDesdeDB()
         {
             List<Services.Veterinaria.Model.Cliente> clientes = new List<Services.Veterinaria.Model.Cliente>();
@@ -108,10 +110,9 @@ namespace Cliente.Veterinaria
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            try
-            {
+            try { 
                 this.validarCampos();
+
                 AnimalDAO _animalDAO = new AnimalDAO();
 
                 Animal nuevoAnimal = new Animal
@@ -138,7 +139,7 @@ namespace Cliente.Veterinaria
             MessageBox.Show(ex.Message + ". Excepcion final");
             }
         }
-
+     
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();

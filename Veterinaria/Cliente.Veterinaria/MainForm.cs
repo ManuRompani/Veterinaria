@@ -1,4 +1,5 @@
-﻿using Cliente.Veterinaria.Ventanas_Especies;
+﻿using Cliente.Veterinaria.Ventanas_Animales;
+using Cliente.Veterinaria.Ventanas_Especies;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,7 @@ namespace Cliente.Veterinaria
         EspeciesForm _especiesForm = null;
         AgregarEspeciesForm _agregarEspeciesForm = null;
         EditarEspeciesForm _editarEspeciesForm = null;
-        
+        EliminarAnimalesForm _eliminarAnimalesForm = null;
 
         public MainForm()
         {
@@ -95,6 +96,7 @@ namespace Cliente.Veterinaria
 
             _editarEspeciesForm.Activate();
         }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
 
@@ -116,6 +118,20 @@ namespace Cliente.Veterinaria
             }
 
             _animalesForm.Activate();
+        }
+
+
+        private void eliminarAnimalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this._eliminarAnimalesForm is null || _eliminarAnimalesForm.IsDisposed)
+            {
+                this._eliminarAnimalesForm= new EliminarAnimalesForm();
+                _eliminarAnimalesForm.WindowState = FormWindowState.Maximized;
+                _eliminarAnimalesForm.MdiParent = this;
+                _eliminarAnimalesForm.Show();
+            }
+
+            _eliminarAnimalesForm.Activate();
 
         }
 

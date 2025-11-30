@@ -29,8 +29,6 @@ namespace Cliente.Veterinaria
             {
                 _listadoEspecies = especieDAO.getAllEspecies();
                 dgvEspecies.DataSource = _listadoEspecies;
-
-
             }
             catch
             {
@@ -38,6 +36,9 @@ namespace Cliente.Veterinaria
             } 
         }
 
-         
+        private void btnActualizarDGV_Click(object sender, EventArgs e)
+        {
+            cargarEspeciesDGV();
+        }
     }
 }

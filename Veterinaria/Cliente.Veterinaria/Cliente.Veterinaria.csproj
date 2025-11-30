@@ -47,7 +47,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+
+   <Compile Include="AgregarClienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarClienteForm.Designer.cs">
+      <DependentUpon>AgregarClienteForm.cs</DependentUpon>
+    </Compile>
+
     <Compile Include="Ventanas Animales\AgregarAnimalesForm.cs">
+
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ventanas Animales\AgregarAnimalesForm.Designer.cs">
@@ -58,6 +67,12 @@
     </Compile>
     <Compile Include="ClientesForm.Designer.cs">
       <DependentUpon>ClientesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas Animales\EliminarAnimalesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas Animales\EliminarAnimalesForm.Designer.cs">
+      <DependentUpon>EliminarAnimalesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventanas Animales\VerReportePesosAnimales.cs">
       <SubType>Form</SubType>
@@ -85,6 +100,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+
+    <EmbeddedResource Include="AgregarClienteForm.resx">
+      <DependentUpon>AgregarClienteForm.cs</DependentUpon>
+    </EmbeddedResource>
+
     <Compile Include="Ventanas Especies\AgregarEspeciesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,9 +117,13 @@
     <Compile Include="Ventanas Especies\EditarEspeciesForm.Designer.cs">
       <DependentUpon>EditarEspeciesForm.cs</DependentUpon>
     </Compile>
+
+
+
     <EmbeddedResource Include="Ventanas Animales\AgregarAnimalesForm.resx">
       <DependentUpon>AgregarAnimalesForm.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="ClientesForm.resx">
       <DependentUpon>ClientesForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +142,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Ventanas Animales\EliminarAnimalesForm.resx">
+      <DependentUpon>EliminarAnimalesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventanas Especies\AgregarEspeciesForm.resx">
       <DependentUpon>AgregarEspeciesForm.cs</DependentUpon>
     </EmbeddedResource>
