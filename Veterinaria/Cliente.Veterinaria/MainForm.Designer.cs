@@ -84,6 +84,7 @@
             this.agregarAnimalToolStripMenuItem.Name = "agregarAnimalToolStripMenuItem";
             this.agregarAnimalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.agregarAnimalToolStripMenuItem.Text = "Agregar animal";
+            this.agregarAnimalToolStripMenuItem.Click += new System.EventHandler(this.agregarAnimalToolStripMenuItem_Click);
             // 
             // modificarAnimalToolStripMenuItem
             // 
@@ -96,6 +97,7 @@
             this.eliminarAnimalToolStripMenuItem.Name = "eliminarAnimalToolStripMenuItem";
             this.eliminarAnimalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.eliminarAnimalToolStripMenuItem.Text = "Eliminar animal";
+            this.eliminarAnimalToolStripMenuItem.Click += new System.EventHandler(this.eliminarAnimalToolStripMenuItem_Click);
             // 
             // verPesosDeAnimalesToolStripMenuItem
             // 
@@ -116,14 +118,14 @@
             // agregarEspecieToolStripMenuItem
             // 
             this.agregarEspecieToolStripMenuItem.Name = "agregarEspecieToolStripMenuItem";
-            this.agregarEspecieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarEspecieToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.agregarEspecieToolStripMenuItem.Text = "Agregar Especie";
             this.agregarEspecieToolStripMenuItem.Click += new System.EventHandler(this.agregarEspecieToolStripMenuItem_Click);
             // 
             // editarEspecieToolStripMenuItem
             // 
             this.editarEspecieToolStripMenuItem.Name = "editarEspecieToolStripMenuItem";
-            this.editarEspecieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editarEspecieToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.editarEspecieToolStripMenuItem.Text = "Editar Especie";
             this.editarEspecieToolStripMenuItem.Click += new System.EventHandler(this.editarEspecieToolStripMenuItem_Click);
             // 

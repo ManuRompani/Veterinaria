@@ -59,6 +59,12 @@
     <Compile Include="ClientesForm.Designer.cs">
       <DependentUpon>ClientesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas Animales\EliminarAnimalesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas Animales\EliminarAnimalesForm.Designer.cs">
+      <DependentUpon>EliminarAnimalesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas Animales\VerReportePesosAnimales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Ventanas Animales\EliminarAnimalesForm.resx">
+      <DependentUpon>EliminarAnimalesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventanas Especies\AgregarEspeciesForm.resx">
       <DependentUpon>AgregarEspeciesForm.cs</DependentUpon>
     </EmbeddedResource>
