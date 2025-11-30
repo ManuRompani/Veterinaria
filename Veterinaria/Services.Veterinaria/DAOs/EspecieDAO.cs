@@ -27,9 +27,9 @@ namespace Services.Veterinaria.DAOs
 
                 return RowsAffected > 0;
             }
-            catch 
+            catch(Exception ex)
             {
-                throw;
+                throw new Exception($"Error al insertar la especie '{especie.Nombre}': {ex.Message}", ex);
             }
             finally
             {

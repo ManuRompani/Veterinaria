@@ -105,8 +105,8 @@ VALUES (@nombre, @peso, @edad, @clienteId, @especieId);";
             insertarParametro("@nombre", animal.Nombre);
             insertarParametro("@peso", animal.Peso.ToString());
             insertarParametro("@edad", animal.Edad.ToString());
-            insertarParametro("@Cliente", animal.ClienteDueño.Dni.ToString());
-            insertarParametro("@Especie", animal.Especie.ID.ToString());
+            insertarParametro("@clienteId", animal.ClienteDueño.Dni.ToString());
+            insertarParametro("@especieId", animal.Especie.ID.ToString());
 
             int RowsAffected = ejecutarConsulta();
 

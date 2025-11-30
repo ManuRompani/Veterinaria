@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Cliente.Veterinaria.Ventanas_Animales;
+using Cliente.Veterinaria.Ventanas_Especies;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -17,7 +19,9 @@ namespace Cliente.Veterinaria
         AgregarAnimalesForm _animalesForm = null;
         ClientesForm _clientesForm = null;
         EspeciesForm _especiesForm = null;
-        
+        AgregarEspeciesForm _agregarEspeciesForm = null;
+        EditarEspeciesForm _editarEspeciesForm = null;
+        EliminarAnimalesForm _eliminarAnimalesForm = null;
 
         public MainForm()
         {
@@ -91,5 +95,63 @@ namespace Cliente.Veterinaria
 
         }
 
+        private void agregarEspecieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this._agregarEspeciesForm is null || _agregarEspeciesForm.IsDisposed)
+            {
+                this._agregarEspeciesForm = new AgregarEspeciesForm();
+                _agregarEspeciesForm.WindowState = FormWindowState.Maximized;
+                _agregarEspeciesForm.MdiParent = this;
+                _agregarEspeciesForm.Show();
+            }
+
+            _agregarEspeciesForm.Activate();
+        }
+
+        private void editarEspecieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this._editarEspeciesForm is null || _editarEspeciesForm.IsDisposed)
+            {
+                this._editarEspeciesForm= new EditarEspeciesForm();
+                _editarEspeciesForm.WindowState = FormWindowState.Maximized;
+                _editarEspeciesForm.MdiParent = this;
+                _editarEspeciesForm.Show();
+            }
+
+            _editarEspeciesForm.Activate();
+        }
+
+        private void eliminarAnimalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this._eliminarAnimalesForm is null || _eliminarAnimalesForm.IsDisposed)
+            {
+                this._eliminarAnimalesForm= new EliminarAnimalesForm();
+                _eliminarAnimalesForm.WindowState = FormWindowState.Maximized;
+                _eliminarAnimalesForm.MdiParent = this;
+                _eliminarAnimalesForm.Show();
+            }
+
+            _eliminarAnimalesForm.Activate();
+        }
+
+        private void agregarAnimalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this._animalesForm is null || _animalesForm.IsDisposed)
+            {
+                this._animalesForm = new AgregarAnimalesForm();
+                _animalesForm.WindowState = FormWindowState.Maximized;
+                _animalesForm.MdiParent = this;
+                _animalesForm.Show();
+
+                this.menuStrip1.Visible = false;
+
+            }
+            _animalesForm.FormClosed += (s, args) =>
+            {
+                this.menuStrip1.Visible = true;
+            };
+
+            _animalesForm.Activate();
+        }
     }
 }

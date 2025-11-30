@@ -55,6 +55,7 @@
     <Compile Include="Utilities\Exceptions\DNIExistException.cs" />
     <Compile Include="Utilities\Exceptions\LongitudInvalidaException.cs" />
     <Compile Include="Utilities\Exceptions\UniquePropertyException.cs" />
+    <Compile Include="Utilities\Exceptions\ValidationException.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
