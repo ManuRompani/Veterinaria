@@ -37,6 +37,8 @@
             this.eliminarAnimalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verPesosDeAnimalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.especiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarEspecieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarEspecieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,10 +105,27 @@
             // 
             // especiesToolStripMenuItem
             // 
+            this.especiesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarEspecieToolStripMenuItem,
+            this.editarEspecieToolStripMenuItem});
             this.especiesToolStripMenuItem.Name = "especiesToolStripMenuItem";
             this.especiesToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.especiesToolStripMenuItem.Text = "Especies";
             this.especiesToolStripMenuItem.Click += new System.EventHandler(this.especiesToolStripMenuItem_Click);
+            // 
+            // agregarEspecieToolStripMenuItem
+            // 
+            this.agregarEspecieToolStripMenuItem.Name = "agregarEspecieToolStripMenuItem";
+            this.agregarEspecieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarEspecieToolStripMenuItem.Text = "Agregar Especie";
+            this.agregarEspecieToolStripMenuItem.Click += new System.EventHandler(this.agregarEspecieToolStripMenuItem_Click);
+            // 
+            // editarEspecieToolStripMenuItem
+            // 
+            this.editarEspecieToolStripMenuItem.Name = "editarEspecieToolStripMenuItem";
+            this.editarEspecieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editarEspecieToolStripMenuItem.Text = "Editar Especie";
+            this.editarEspecieToolStripMenuItem.Click += new System.EventHandler(this.editarEspecieToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -138,6 +157,8 @@
         private System.Windows.Forms.ToolStripMenuItem modificarAnimalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarAnimalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verPesosDeAnimalesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agregarEspecieToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editarEspecieToolStripMenuItem;
     }
 }
 

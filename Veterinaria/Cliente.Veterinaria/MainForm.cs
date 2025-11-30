@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cliente.Veterinaria.Ventanas_Especies;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -17,6 +18,8 @@ namespace Cliente.Veterinaria
         AgregarAnimalesForm _animalesForm = null;
         ClientesForm _clientesForm = null;
         EspeciesForm _especiesForm = null;
+        AgregarEspeciesForm _agregarEspeciesForm = null;
+        EditarEspeciesForm _editarEspeciesForm = null;
         
 
         public MainForm()
@@ -89,6 +92,32 @@ namespace Cliente.Veterinaria
         private void MainForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void agregarEspecieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this._agregarEspeciesForm is null || _agregarEspeciesForm.IsDisposed)
+            {
+                this._agregarEspeciesForm = new AgregarEspeciesForm();
+                _agregarEspeciesForm.WindowState = FormWindowState.Maximized;
+                _agregarEspeciesForm.MdiParent = this;
+                _agregarEspeciesForm.Show();
+            }
+
+            _agregarEspeciesForm.Activate();
+        }
+
+        private void editarEspecieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this._editarEspeciesForm is null || _editarEspeciesForm.IsDisposed)
+            {
+                this._editarEspeciesForm= new EditarEspeciesForm();
+                _editarEspeciesForm.WindowState = FormWindowState.Maximized;
+                _editarEspeciesForm.MdiParent = this;
+                _editarEspeciesForm.Show();
+            }
+
+            _editarEspeciesForm.Activate();
         }
     }
 }
