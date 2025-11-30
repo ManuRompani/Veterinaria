@@ -46,6 +46,7 @@
             this.tboxMadurez = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tboxPromedio = new System.Windows.Forms.TextBox();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cboxAnimales
@@ -70,6 +71,7 @@
             // 
             this.tboxID.Location = new System.Drawing.Point(33, 141);
             this.tboxID.Name = "tboxID";
+            this.tboxID.ReadOnly = true;
             this.tboxID.Size = new System.Drawing.Size(250, 20);
             this.tboxID.TabIndex = 2;
             // 
@@ -77,6 +79,7 @@
             // 
             this.tboxNombre.Location = new System.Drawing.Point(33, 192);
             this.tboxNombre.Name = "tboxNombre";
+            this.tboxNombre.ReadOnly = true;
             this.tboxNombre.Size = new System.Drawing.Size(250, 20);
             this.tboxNombre.TabIndex = 3;
             // 
@@ -84,6 +87,7 @@
             // 
             this.tboxPeso.Location = new System.Drawing.Point(33, 243);
             this.tboxPeso.Name = "tboxPeso";
+            this.tboxPeso.ReadOnly = true;
             this.tboxPeso.Size = new System.Drawing.Size(250, 20);
             this.tboxPeso.TabIndex = 4;
             // 
@@ -111,6 +115,7 @@
             // 
             this.tboxEdad.Location = new System.Drawing.Point(33, 294);
             this.tboxEdad.Name = "tboxEdad";
+            this.tboxEdad.ReadOnly = true;
             this.tboxEdad.Size = new System.Drawing.Size(250, 20);
             this.tboxEdad.TabIndex = 7;
             // 
@@ -118,6 +123,7 @@
             // 
             this.tboxEspecie.Location = new System.Drawing.Point(33, 345);
             this.tboxEspecie.Name = "tboxEspecie";
+            this.tboxEspecie.ReadOnly = true;
             this.tboxEspecie.Size = new System.Drawing.Size(250, 20);
             this.tboxEspecie.TabIndex = 8;
             // 
@@ -179,6 +185,7 @@
             // 
             this.tboxMadurez.Location = new System.Drawing.Point(33, 396);
             this.tboxMadurez.Name = "tboxMadurez";
+            this.tboxMadurez.ReadOnly = true;
             this.tboxMadurez.Size = new System.Drawing.Size(250, 20);
             this.tboxMadurez.TabIndex = 14;
             // 
@@ -195,14 +202,26 @@
             // 
             this.tboxPromedio.Location = new System.Drawing.Point(33, 447);
             this.tboxPromedio.Name = "tboxPromedio";
+            this.tboxPromedio.ReadOnly = true;
             this.tboxPromedio.Size = new System.Drawing.Size(250, 20);
             this.tboxPromedio.TabIndex = 16;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(33, 493);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.TabIndex = 18;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // DetalleAnimalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(321, 528);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.tboxPromedio);
             this.Controls.Add(this.label8);
@@ -222,6 +241,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboxAnimales);
             this.Name = "DetalleAnimalForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DetalleAnimalForm";
             this.Load += new System.EventHandler(this.DetalleAnimalForm_Load);
             this.ResumeLayout(false);
@@ -249,5 +269,6 @@
         private System.Windows.Forms.TextBox tboxMadurez;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox tboxPromedio;
+        private System.Windows.Forms.Button btnEditar;
     }
 }

@@ -71,6 +71,12 @@
     <Compile Include="Ventanas Animales\DetalleAnimalForm.Designer.cs">
       <DependentUpon>DetalleAnimalForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas Animales\EditarAnimalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas Animales\EditarAnimalForm.Designer.cs">
+      <DependentUpon>EditarAnimalForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas Animales\EliminarAnimalesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </Compile>
     <EmbeddedResource Include="Ventanas Animales\DetalleAnimalForm.resx">
       <DependentUpon>DetalleAnimalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas Animales\EditarAnimalForm.resx">
+      <DependentUpon>EditarAnimalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas Animales\EliminarAnimalesForm.resx">
       <DependentUpon>EliminarAnimalesForm.cs</DependentUpon>

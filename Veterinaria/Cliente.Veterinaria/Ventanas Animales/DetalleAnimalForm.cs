@@ -14,6 +14,7 @@ namespace Cliente.Veterinaria.Ventanas_Animales
 {
     public partial class DetalleAnimalForm : Form
     {
+        private bool _editar = false;
         private int _clienteDni;
         private List<Animal> _animales = null;
 
@@ -63,14 +64,37 @@ namespace Cliente.Veterinaria.Ventanas_Animales
 
         private void MostrarAnimal(Animal animal)
         {
-            tboxID.Text = animal.ID.ToString();
-            tboxNombre.Text = animal.Nombre;
-            tboxPeso.Text = animal.Peso.ToString();
-            tboxEdad.Text = animal.Edad.ToString();
+            try
+            {
+                tboxID.Text = animal.ID.ToString();
+                tboxNombre.Text = animal.Nombre;
+                tboxPeso.Text = animal.Peso.ToString();
+                tboxEdad.Text = animal.Edad.ToString();
 
-            tboxEspecie.Text = animal.Especie.Nombre;
-            tboxMadurez.Text = animal.Especie.EdadMadurez.ToString();
-            tboxPromedio.Text = animal.Especie.PesoPromedio.ToString();
+                tboxEspecie.Text = animal.Especie.Nombre;
+                tboxMadurez.Text = animal.Especie.EdadMadurez.ToString();
+                tboxPromedio.Text = animal.Especie.PesoPromedio.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Animal animal = (Animal)cboxAnimales.SelectedItem;
+                animal.ClienteDueño.Dni = _clienteDni;
+                EditarAnimalForm editarAnimalForm = new EditarAnimalForm(animal);
+                editarAnimalForm.ShowDialog();
+                this.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

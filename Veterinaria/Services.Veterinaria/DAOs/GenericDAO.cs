@@ -50,6 +50,23 @@ namespace Services.Veterinaria.DAOs
 
             _comando.Parameters.Add(parametro);
         }
+        protected void insertarParametro(string nombre, int valor)
+        {
+            DbParameter parametro = _comando.CreateParameter();
+            parametro.ParameterName = nombre;
+            parametro.Value = valor;
+            parametro.DbType = DbType.Int32;
+            _comando.Parameters.Add(parametro);
+        }
+
+        protected void insertarParametro(string nombre, decimal valor)
+        {
+            DbParameter parametro = _comando.CreateParameter();
+            parametro.ParameterName = nombre;
+            parametro.Value = valor;
+            parametro.DbType = DbType.Decimal;
+            _comando.Parameters.Add(parametro);
+        }
 
         /// <summary>
         /// Setea la consulta sql en el comando

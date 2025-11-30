@@ -21,7 +21,7 @@ namespace Services.Veterinaria.Model
 
         public override string ToString()
         {
-            return $"{this.Nombre} {this.Apellido}";
+            return this.Nombre;
         }
         
     }
