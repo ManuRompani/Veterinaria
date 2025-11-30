@@ -31,6 +31,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.animalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verAnimalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarAnimalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarAnimalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarAnimalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verPesosDeAnimalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.especiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -47,19 +52,54 @@
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // inicioToolStripMenuItem
+            // clientesToolStripMenuItem
             // 
-            this.clientesToolStripMenuItem.Name = "inicioToolStripMenuItem";
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
-            // configuraciónToolStripMenuItem
+            // animalesToolStripMenuItem
             // 
-            this.animalesToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
+            this.animalesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verAnimalesToolStripMenuItem,
+            this.agregarAnimalToolStripMenuItem,
+            this.modificarAnimalToolStripMenuItem,
+            this.eliminarAnimalToolStripMenuItem,
+            this.verPesosDeAnimalesToolStripMenuItem});
+            this.animalesToolStripMenuItem.Name = "animalesToolStripMenuItem";
             this.animalesToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.animalesToolStripMenuItem.Text = "Animales";
-            this.animalesToolStripMenuItem.Click += new System.EventHandler(this.animalesToolStripMenuItem_Click);
+            // 
+            // verAnimalesToolStripMenuItem
+            // 
+            this.verAnimalesToolStripMenuItem.Name = "verAnimalesToolStripMenuItem";
+            this.verAnimalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verAnimalesToolStripMenuItem.Text = "Ver todos animales";
+            // 
+            // agregarAnimalToolStripMenuItem
+            // 
+            this.agregarAnimalToolStripMenuItem.Name = "agregarAnimalToolStripMenuItem";
+            this.agregarAnimalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarAnimalToolStripMenuItem.Text = "Agregar animal";
+            // 
+            // modificarAnimalToolStripMenuItem
+            // 
+            this.modificarAnimalToolStripMenuItem.Name = "modificarAnimalToolStripMenuItem";
+            this.modificarAnimalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modificarAnimalToolStripMenuItem.Text = "Modificar animal";
+            // 
+            // eliminarAnimalToolStripMenuItem
+            // 
+            this.eliminarAnimalToolStripMenuItem.Name = "eliminarAnimalToolStripMenuItem";
+            this.eliminarAnimalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eliminarAnimalToolStripMenuItem.Text = "Eliminar animal";
+            // 
+            // verPesosDeAnimalesToolStripMenuItem
+            // 
+            this.verPesosDeAnimalesToolStripMenuItem.Name = "verPesosDeAnimalesToolStripMenuItem";
+            this.verPesosDeAnimalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verPesosDeAnimalesToolStripMenuItem.Text = "Ver reporte de pesos";
             // 
             // especiesToolStripMenuItem
             // 
@@ -79,6 +119,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -92,6 +133,11 @@
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem animalesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem especiesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verAnimalesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agregarAnimalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificarAnimalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarAnimalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verPesosDeAnimalesToolStripMenuItem;
     }
 }
 

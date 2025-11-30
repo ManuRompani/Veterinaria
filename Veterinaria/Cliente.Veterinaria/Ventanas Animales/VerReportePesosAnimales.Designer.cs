@@ -1,6 +1,6 @@
-﻿namespace Cliente.Veterinaria
+﻿namespace Cliente.Veterinaria.Ventanas_Animales
 {
-    partial class EspeciesForm
+    partial class VerReportePesosAnimales
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "EspeciesForm";
+            this.Text = "VerReportePesosAnimales";
         }
 
         #endregion

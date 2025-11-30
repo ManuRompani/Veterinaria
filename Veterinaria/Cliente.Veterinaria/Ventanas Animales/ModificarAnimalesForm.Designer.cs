@@ -1,6 +1,6 @@
-﻿namespace Cliente.Veterinaria
+﻿namespace Cliente.Veterinaria.Ventanas_Animales
 {
-    partial class AnimalesForm
+    partial class ModificarAnimalesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // AnimalesForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "AnimalesForm";
-            this.Text = "AnimalesForm";
-            this.ResumeLayout(false);
-
+            this.Text = "ModificarAnimalesForm";
         }
 
         #endregion

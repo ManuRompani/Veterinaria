@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Cliente.Veterinaria
+namespace Cliente.Veterinaria.Ventanas_Animales
 {
-    public partial class AnimalesForm : Form
+    public partial class VerReportePesosAnimales : Form
     {
-        public AnimalesForm()
+        public VerReportePesosAnimales()
         {
             InitializeComponent();
         }

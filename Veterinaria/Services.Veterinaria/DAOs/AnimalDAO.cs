@@ -31,7 +31,7 @@ namespace Services.Veterinaria.DAOs
                     Nombre = _lector.GetString(1),
                     Peso = _lector.GetDecimal(2),
                     Edad = _lector.GetInt32(3),
-                    Cliente = new Cliente { Dni = _lector.GetInt32(4) },
+                    ClienteDueño = new Cliente { Dni = _lector.GetInt32(4) },
                     Especie = new Especie { ID = _lector.GetInt32(5) }
                 };
                 ListaAnimales.Add(animal);
@@ -90,11 +90,12 @@ namespace Services.Veterinaria.DAOs
 
 
         /// <summary>
-        /// Metodo para insertar un animal en la tabla Animales de la base de datos
+        /// Metodo para insertar un animal en la tabla Animales de la base de datos, devuelve un booleano
         /// </summary>
         /// <param name="animal"></param>
         /// <returns></returns>
         public bool insertAnimal(Animal animal) {
+
             string edad = animal.Edad.ToString();
             string query = $@"INSERT INTO Animales (Nombre, Peso, Edad, Cliente_ID, Especie_ID)
 VALUES (@nombre, @peso, @edad, @clienteId, @especieId);";
@@ -103,9 +104,9 @@ VALUES (@nombre, @peso, @edad, @clienteId, @especieId);";
 
             insertarParametro("@nombre", animal.Nombre);
             insertarParametro("@peso", animal.Peso.ToString());
-            insertarParametro("@nombre", animal.Edad.ToString());
-            insertarParametro("@nombre", animal.Cliente.Dni.ToString());
-            insertarParametro("@nombre", animal.Especie.ID.ToString());
+            insertarParametro("@edad", animal.Edad.ToString());
+            insertarParametro("@Cliente", animal.ClienteDueño.Dni.ToString());
+            insertarParametro("@Especie", animal.Especie.ID.ToString());
 
             int RowsAffected = ejecutarConsulta();
 
@@ -116,6 +117,58 @@ VALUES (@nombre, @peso, @edad, @clienteId, @especieId);";
             return RowsAffected > 0;
         }
 
+        /// <summary>
+        /// Metodo para eliminar un animal completo de la base de datos, devuelve un booleano
+        /// </summary>
+        /// <param name="animal"></param>
+        /// <returns></returns>
+        public bool deleteAnimal(Animal animal) {
+
+            string consulta = "DELETE FROM Animales WHERE ID = @id";
+            setearConsulta(consulta);
+                      
+            int RowsAffected = ejecutarConsulta();
+
+            return RowsAffected > 0;
+        }
+
+
+        /// <summary>
+        /// Metodo para actualizar un animal, devuelve un booleano
+        /// </summary>
+        /// <param name="animal"></param>
+        /// <returns></returns>
+        public bool updateAnimal(Animal animal) {
+
+            try
+            {
+                string consulta = @"UPDATE Animales 
+                            SET Nombre = @nombre,
+                                Peso = @peso,
+                                Edad = @edad,
+                                Cliente_ID = @cliente,
+                                Especie_ID = @especie
+                            WHERE ID = @id";
+
+                setearConsulta(consulta);
+
+                insertarParametro("@nombre", animal.Nombre);
+                insertarParametro("@peso", animal.Peso.ToString());
+                insertarParametro("@edad", animal.Edad.ToString());
+                insertarParametro("@cliente", animal.ClienteDueño.Dni.ToString());
+                insertarParametro("@especie", animal.Especie.ID.ToString());
+                insertarParametro("@id", animal.ID.ToString());
+
+                int RowsAffected = ejecutarConsulta();
+                desconectar();
+
+                return RowsAffected > 0;
+            }
+            catch {
+                desconectar();
+                return false;
+            }
+        }
 
     }
 }

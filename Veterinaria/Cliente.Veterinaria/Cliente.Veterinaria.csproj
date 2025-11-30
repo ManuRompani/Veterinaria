@@ -47,17 +47,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgregarClienteForm.cs">
+
+   <Compile Include="AgregarClienteForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AgregarClienteForm.Designer.cs">
       <DependentUpon>AgregarClienteForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AnimalesForm.cs">
+
+    <Compile Include="Ventanas Animales\AgregarAnimalesForm.cs">
+
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AnimalesForm.Designer.cs">
-      <DependentUpon>AnimalesForm.cs</DependentUpon>
+    <Compile Include="Ventanas Animales\AgregarAnimalesForm.Designer.cs">
+      <DependentUpon>AgregarAnimalesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ClientesForm.cs">
       <SubType>Form</SubType>
@@ -65,10 +68,16 @@
     <Compile Include="ClientesForm.Designer.cs">
       <DependentUpon>ClientesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EspeciesForm.cs">
+    <Compile Include="Ventanas Animales\VerReportePesosAnimales.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EspeciesForm.Designer.cs">
+    <Compile Include="Ventanas Animales\VerReportePesosAnimales.Designer.cs">
+      <DependentUpon>VerReportePesosAnimales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas Especies\EspeciesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas Especies\EspeciesForm.Designer.cs">
       <DependentUpon>EspeciesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
@@ -85,12 +94,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+
     <EmbeddedResource Include="AgregarClienteForm.resx">
       <DependentUpon>AgregarClienteForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AnimalesForm.resx">
-      <DependentUpon>AnimalesForm.cs</DependentUpon>
+
+    <EmbeddedResource Include="Ventanas Animales\AgregarAnimalesForm.resx">
+      <DependentUpon>AgregarAnimalesForm.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="ClientesForm.resx">
       <DependentUpon>ClientesForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +121,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Ventanas Animales\EliminarAnimalesForm.resx">
+      <DependentUpon>EliminarAnimalesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas Animales\ReportePesosAnimalesForm.resx">
+      <DependentUpon>ReportePesosAnimalesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas Animales\VerListadoAnimalesForm.resx">
+      <DependentUpon>VerListadoAnimalesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas Especies\EspeciesForm.resx">
+      <DependentUpon>EspeciesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
