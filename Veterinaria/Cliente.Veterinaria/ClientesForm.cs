@@ -1,4 +1,5 @@
-﻿using Services.Veterinaria.DAOs;
+﻿using Cliente.Veterinaria.Ventanas_Animales;
+using Services.Veterinaria.DAOs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -111,6 +112,7 @@ namespace Cliente.Veterinaria
                     e.RowIndex >= 0)
                 {
                     int dni = (int)senderGrid.Rows[e.RowIndex].Cells["DNI"].Value;
+                    int animales = (int)senderGrid.Rows[e.RowIndex].Cells["Cantidad de Animales"].Value;
 
                     switch (senderGrid.Columns[e.ColumnIndex].Name)
                     {
@@ -119,7 +121,15 @@ namespace Cliente.Veterinaria
                             clienteForm.ShowDialog();
                             break;
                         case "Ver Animales":
-                            //Navegar a la vista de editar animales buscando los animales del cliente con DNI = dni;
+                            if(animales > 0)
+                            {
+                                DetalleAnimalForm detalleAnimalForm = new DetalleAnimalForm(dni);
+                                detalleAnimalForm.ShowDialog();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El Cliente no tiene Animales");
+                            }
                             break;
 
                     }
@@ -136,8 +146,8 @@ namespace Cliente.Veterinaria
             if (dgvClientes.Columns.Contains("Editar"))
                 dgvClientes.Columns.Remove("Editar");
 
-            if (dgvClientes.Columns.Contains("VerAnimales"))
-                dgvClientes.Columns.Remove("VerAnimales");
+            if (dgvClientes.Columns.Contains("Ver Animales"))
+                dgvClientes.Columns.Remove("Ver Animales");
 
             if (!dgvClientes.Columns.Contains("Editar"))
             {
@@ -148,11 +158,11 @@ namespace Cliente.Veterinaria
                 dgvClientes.Columns.Add(btnEditarCliente);
             }
 
-            if (!dgvClientes.Columns.Contains("VerAnimales"))
+            if (!dgvClientes.Columns.Contains("Ver Animales"))
             {
                 DataGridViewButtonColumn btnVerAnimales = new DataGridViewButtonColumn();
                 btnVerAnimales.Text = "Ver Animales";
-                btnVerAnimales.Name = "VerAnimales";
+                btnVerAnimales.Name = "Ver Animales";
                 btnVerAnimales.UseColumnTextForButtonValue = true;
                 dgvClientes.Columns.Add(btnVerAnimales);
             }

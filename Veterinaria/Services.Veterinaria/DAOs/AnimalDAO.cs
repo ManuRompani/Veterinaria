@@ -170,5 +170,64 @@ VALUES (@nombre, @peso, @edad, @clienteId, @especieId);";
             }
         }
 
+
+
+        /// <summary>
+        /// Devuelve una lista de animales con su especie pertenecientes a un dni en especifico
+        /// </summary>
+        public List<Animal> getAllAnimalesConEspecieByDNI(int dni)
+        {
+            List<Animal> animales = null;
+
+            try
+            {
+                string consulta = "SELECT A.ID, A.Nombre, A.Peso, A.Edad, Cliente_ID, Especie_ID, E.Nombre, E.EdadMadurez, E.PesoPromedio  " +
+                    "FROM Animales as A left join Especies as E on A.Especie_ID = E.ID where A.Cliente_ID = @dni";
+
+                setearConsulta(consulta);
+
+                insertarParametro("dni", dni.ToString());
+
+                ejecutarLectura();
+
+                while (_lector.Read())
+                {
+                    if(animales is null)
+                    {
+                        animales = new List<Animal>();
+                    }
+
+                    Animal animal = new Animal()
+                    {
+                        ID = _lector.GetInt32(0),
+                        Nombre = _lector.GetString(1),
+                        Peso = _lector.GetDecimal(2),
+                        Edad = _lector.GetInt32(3),
+                        ClienteDueño = new Cliente { Dni = _lector.GetInt32(4) },
+                        Especie = new Especie
+                        {
+                            ID = _lector.GetInt32(5),
+                            Nombre = _lector.GetString(6),
+                            EdadMadurez = _lector.GetInt32(7),
+                            PesoPromedio = _lector.GetDecimal(8)
+
+                        }
+                    };
+
+                    animales.Add(animal);
+                }
+
+                return animales;
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                desconectar();
+            }
+        }
+
     }
 }
