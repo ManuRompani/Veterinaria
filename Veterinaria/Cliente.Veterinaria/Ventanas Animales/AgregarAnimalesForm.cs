@@ -34,8 +34,8 @@ namespace Cliente.Veterinaria
 
             //Le paso al combobox todas las especie por su nombre
             //cmbEspecie.DataSource = especieDao.getAll();
-            cmbCliente.DisplayMember = "Nombre";
-            cmbCliente.ValueMember = "ID";
+            cmbEspecie.DisplayMember = "Nombre";
+            cmbEspecie.ValueMember = "ID";
 
         }
 
@@ -79,9 +79,11 @@ namespace Cliente.Veterinaria
                 Edad = edad
             };
 
-            
             nuevoAnimal.ClienteDueño = new Services.Veterinaria.Model.Cliente { Dni = (int)cmbCliente.SelectedValue };
             nuevoAnimal.Especie = new Especie { ID = (int)cmbEspecie.SelectedValue };
+
+
+
         }
     }
 }
