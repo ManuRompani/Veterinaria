@@ -19,9 +19,9 @@ namespace Services.Veterinaria.DAOs
 
         public GenericDAO()
         {
-            string sConnect = ConfigurationManager.ConnectionStrings["LocalConnection"].ToString();
+            //string sConnect = ConfigurationManager.ConnectionStrings["LocalConnection"].ToString();
 
-            _dbConnection = new SqlConnection(sConnect);
+            _dbConnection = new SqlConnection("Server=DESKTOP-R24JLT1\\SQLEXPRESS;Database=VeterinariaDB;Integrated Security=True;");
         }
 
 

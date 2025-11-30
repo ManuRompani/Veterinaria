@@ -55,6 +55,18 @@ namespace Test.Veterinaria
                 }
                 Console.WriteLine("Credenciales validas:" + usuarioDAO.autenticarUsuario(usuario));
             }
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            List<Cliente> clientes = clienteDAO.GetTodos();
+            foreach(var item in clientes)
+            {
+                Console.WriteLine("DNI: " + item.Dni);
+                Console.WriteLine("Nombre: " + item.Nombre);
+                Console.WriteLine("Apellido: " + item.Apellido);
+                Console.WriteLine("Telefono: " + item.Telefono);
+            }
         }
     }
 }
