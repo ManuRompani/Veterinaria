@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cliente.Veterinaria.Ventanas_Animales;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -9,15 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace Cliente.Veterinaria
 {
     public partial class MainForm : Form
     {
         AgregarAnimalesForm _animalesForm = null;
+        EliminarAnimalesForm _eliminarAnimalesForm = null;
         ClientesForm _clientesForm = null;
         EspeciesForm _especiesForm = null;
-        
 
         public MainForm()
         {
@@ -32,6 +32,11 @@ namespace Cliente.Veterinaria
             Application.Exit();
         }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            
+        }
+
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // IsDisposed es un booleano que se pone en true cuando se cierra un formulario, los recursos se liberan y este no puede ser reutilziado
@@ -44,31 +49,10 @@ namespace Cliente.Veterinaria
                 _clientesForm.MdiParent = this;
                 _clientesForm.Show();
             }
-            
+
             _clientesForm.Activate();
         }
 
-
-
-        private void configuraciónToolStripMenuItem_Click(object sender, EventArgs e) { }
-
-        private void animalesToolStripMenuItem_Click(object sender, EventArgs e)
-
-        {
-            // IsDisposed es un booleano que se pone en true cuando se cierra un formulario, los recursos se liberan y este no puede ser reutilizado
-            // Entonces validamos si se encuentra en ese estado o si es null y en caso de que se cumpla alguna de las condiciones creamos uno nuevo
-
-            if (this._animalesForm is null || _animalesForm.IsDisposed)
-            {
-                this._animalesForm = new AgregarAnimalesForm();
-                _animalesForm.WindowState = FormWindowState.Maximized;
-                _animalesForm.MdiParent = this;
-                _animalesForm.Show();
-            }
-
-            _animalesForm.Activate();
-
-        }
 
         private void especiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -85,10 +69,56 @@ namespace Cliente.Veterinaria
 
             _especiesForm.Activate();
         }
-
-        private void MainForm_Load(object sender, EventArgs e)
+      
+        
+        //=================Botones ANIMALES=========================
+        private void agregarAnimalToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // IsDisposed es un booleano que se pone en true cuando se cierra un formulario, los recursos se liberan y este no puede ser reutilizado
+            // Entonces validamos si se encuentra en ese estado o si es null y en caso de que se cumpla alguna de las condiciones creamos uno nuevo
+            
+            if (this._animalesForm is null || _animalesForm.IsDisposed)
+            {
+                this._animalesForm = new AgregarAnimalesForm();
+                _animalesForm.WindowState = FormWindowState.Maximized;
+                _animalesForm.MdiParent = this;
+                _animalesForm.Show();
 
+                this.menuStrip1.Visible = false;
+
+            }
+            _animalesForm.FormClosed += (s, args) =>
+            {
+                this.menuStrip1.Visible = true;
+            };
+
+            _animalesForm.Activate();
+
+            
+        }
+
+        private void eliminarAnimalToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            // IsDisposed es un booleano que se pone en true cuando se cierra un formulario, los recursos se liberan y este no puede ser reutilizado
+            // Entonces validamos si se encuentra en ese estado o si es null y en caso de que se cumpla alguna de las condiciones creamos uno nuevo
+
+            if (this._animalesForm is null || _animalesForm.IsDisposed)
+            {
+                this._eliminarAnimalesForm = new EliminarAnimalesForm();
+                _eliminarAnimalesForm.WindowState = FormWindowState.Maximized;
+                _eliminarAnimalesForm.MdiParent = this;
+                _eliminarAnimalesForm.Show();
+
+                this.menuStrip1.Visible = false;
+
+            }
+
+            _eliminarAnimalesForm.FormClosed += (s, args) =>
+            {
+                this.menuStrip1.Visible = true;
+            };
+
+            _eliminarAnimalesForm.Activate();
         }
     }
 }

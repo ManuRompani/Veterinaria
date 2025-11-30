@@ -24,7 +24,7 @@ namespace Cliente.Veterinaria
 
             //Creo los objetos DAO para acceder a sus metodos.
             ClienteDAO clienteDao = new ClienteDAO();
-            //EspecieDAO especieDao = new EspecieDAO();
+            EspecieDAO especieDao = new EspecieDAO();
 
 
             //Le paso al combobox todos los clientes con su nombre completo
@@ -39,6 +39,11 @@ namespace Cliente.Veterinaria
 
         }
 
+        /// <summary>
+        /// Boton con logica para insertar animal en la base de datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text)
@@ -82,8 +87,29 @@ namespace Cliente.Veterinaria
             nuevoAnimal.ClienteDueño = new Services.Veterinaria.Model.Cliente { Dni = (int)cmbCliente.SelectedValue };
             nuevoAnimal.Especie = new Especie { ID = (int)cmbEspecie.SelectedValue };
 
+            //Inserto con el DAO
+
+            AnimalDAO animalDAO = new AnimalDAO();
+            bool resultadoInsert = animalDAO.insertAnimal(nuevoAnimal);
+
+            if (resultadoInsert) {
+                MessageBox.Show("Animal agregado exitosamente");
+                this.Close();  //Cierro el formulario
+            }
+            else
+            {
+
+                MessageBox.Show("No se pudo agregar el animal");
+                //Cuando tenga la excepcion, hay que modificar aca para que muestre porque 
+            }
 
 
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
