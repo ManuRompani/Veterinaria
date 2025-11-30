@@ -152,19 +152,19 @@ VALUES (@nombre, @peso, @edad, @clienteId, @especieId);";
 
                 setearConsulta(consulta);
 
-                insertarParametro("@nombre", animal.Nombre);
-                insertarParametro("@peso", animal.Peso.ToString());
-                insertarParametro("@edad", animal.Edad.ToString());
-                insertarParametro("@cliente", animal.ClienteDueño.Dni.ToString());
-                insertarParametro("@especie", animal.Especie.ID.ToString());
-                insertarParametro("@id", animal.ID.ToString());
+                insertarParametro("nombre", animal.Nombre);
+                insertarParametro("peso", animal.Peso);
+                insertarParametro("edad", animal.Edad);
+                insertarParametro("cliente", animal.ClienteDueño.Dni);
+                insertarParametro("especie", animal.Especie.ID);
+                insertarParametro("id", animal.ID);
 
                 int RowsAffected = ejecutarConsulta();
                 desconectar();
 
                 return RowsAffected > 0;
             }
-            catch {
+            catch(Exception ex){
                 desconectar();
                 return false;
             }
