@@ -67,7 +67,10 @@ namespace Cliente.Veterinaria.Ventanas_Animales
             tboxNombre.Text = animal.Nombre;
             tboxPeso.Text = animal.Peso.ToString();
             tboxEdad.Text = animal.Edad.ToString();
+
             tboxEspecie.Text = animal.Especie.Nombre;
+            tboxMadurez.Text = animal.Especie.EdadMadurez.ToString();
+            tboxPromedio.Text = animal.Especie.PesoPromedio.ToString();
         }
     }
 }

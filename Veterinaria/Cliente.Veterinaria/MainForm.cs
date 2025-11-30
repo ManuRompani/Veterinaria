@@ -99,7 +99,15 @@ namespace Cliente.Veterinaria
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            if (this._clientesForm is null || _clientesForm.IsDisposed)
+            {
+                _clientesForm = new ClientesForm();
+                _clientesForm.WindowState = FormWindowState.Maximized;
+                _clientesForm.MdiParent = this;
+                _clientesForm.Show();
+            }
 
+            _clientesForm.Activate();
         }
 
         //============ANIMALES TOOLSTRIP=========================
