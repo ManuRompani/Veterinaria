@@ -12,5 +12,10 @@ namespace Services.Veterinaria.Model
         public string Nombre { get; set; }
         public int EdadMadurez { get; set; }
         public decimal PesoPromedio { get; set; }
+
+        public override string ToString()
+        {
+            return this.Nombre;
+        }
     }
 }

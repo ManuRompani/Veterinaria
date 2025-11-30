@@ -14,6 +14,11 @@ namespace Services.Veterinaria.Model
         public int Edad {  get; set; }
         public Cliente ClienteDueño { get; set; }
         public Especie Especie { get; set; }
+
+        public override string ToString()
+        {
+            return this.Nombre;
+        }
         
     }
 }

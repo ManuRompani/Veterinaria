@@ -18,6 +18,11 @@ namespace Services.Veterinaria.Model
         /// Propiedad que devuelve el nombre y apellido en un solo string
         /// </summary>
         public string NombreCompleto => $"{this.Nombre} {this.Apellido}";
+
+        public override string ToString()
+        {
+            return $"{this.Nombre} {this.Apellido}";
+        }
         
     }
 

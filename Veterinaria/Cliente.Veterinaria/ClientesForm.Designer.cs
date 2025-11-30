@@ -33,6 +33,7 @@
             this.btnBuscarDNI = new System.Windows.Forms.Button();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,19 +89,21 @@
             this.btnAgregarCliente.UseVisualStyleBackColor = true;
             this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
             // 
-            // ConfiguracionForm
+            // label1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(999, 586);
-            this.Name = "ConfiguracionForm";
-            this.Text = "ConfiguracionForm";
-
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(275, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(129, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Dejar vacío para ver todo";
+            // 
             // ClientesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAgregarCliente);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.btnBuscarDNI);
@@ -122,5 +125,6 @@
         private System.Windows.Forms.Button btnBuscarDNI;
         private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.Button btnAgregarCliente;
+        private System.Windows.Forms.Label label1;
     }
 }
