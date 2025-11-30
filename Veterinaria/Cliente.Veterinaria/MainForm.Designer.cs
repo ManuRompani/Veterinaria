@@ -78,6 +78,7 @@
             this.verAnimalesToolStripMenuItem.Name = "verAnimalesToolStripMenuItem";
             this.verAnimalesToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.verAnimalesToolStripMenuItem.Text = "Ver todos animales";
+            this.verAnimalesToolStripMenuItem.Click += new System.EventHandler(this.verAnimalesToolStripMenuItem_Click);
             // 
             // agregarAnimalToolStripMenuItem
             // 
@@ -118,14 +119,14 @@
             // agregarEspecieToolStripMenuItem
             // 
             this.agregarEspecieToolStripMenuItem.Name = "agregarEspecieToolStripMenuItem";
-            this.agregarEspecieToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.agregarEspecieToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.agregarEspecieToolStripMenuItem.Text = "Agregar Especie";
             this.agregarEspecieToolStripMenuItem.Click += new System.EventHandler(this.agregarEspecieToolStripMenuItem_Click);
             // 
             // editarEspecieToolStripMenuItem
             // 
             this.editarEspecieToolStripMenuItem.Name = "editarEspecieToolStripMenuItem";
-            this.editarEspecieToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.editarEspecieToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.editarEspecieToolStripMenuItem.Text = "Editar Especie";
             this.editarEspecieToolStripMenuItem.Click += new System.EventHandler(this.editarEspecieToolStripMenuItem_Click);
             // 

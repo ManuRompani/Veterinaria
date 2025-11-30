@@ -67,6 +67,7 @@ namespace Cliente.Veterinaria
         }
         
 
+        //==============IMPORTANTE CAMBIAR ESTE METODO POR GETALLCLIENTES()==========
         private List<Services.Veterinaria.Model.Cliente> ObtenerClientesDesdeDB()
         {
             List<Services.Veterinaria.Model.Cliente> clientes = new List<Services.Veterinaria.Model.Cliente>();
@@ -93,7 +94,7 @@ namespace Cliente.Veterinaria
 
             return clientes;
         }
-
+        //===========================================================================
         private void AgregarAnimalesForm_Load(object sender, EventArgs e)
         {
             EspecieDAO _especieDAO = new EspecieDAO();

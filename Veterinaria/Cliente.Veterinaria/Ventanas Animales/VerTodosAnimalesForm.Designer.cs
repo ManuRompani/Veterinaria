@@ -62,6 +62,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Actualizar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -72,6 +73,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Volver atrás";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // VerTodosAnimalesForm
             // 
@@ -84,6 +86,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "VerTodosAnimalesForm";
             this.Text = "VerTodosAnimalesForm";
+            this.Load += new System.EventHandler(this.VerTodosAnimalesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

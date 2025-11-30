@@ -22,7 +22,7 @@ namespace Cliente.Veterinaria
         AgregarEspeciesForm _agregarEspeciesForm = null;
         EditarEspeciesForm _editarEspeciesForm = null;
         EliminarAnimalesForm _eliminarAnimalesForm = null;
-
+        VerTodosAnimalesForm _verAnimalesForm = null;
         public MainForm()
         {
             InitializeComponent();
@@ -153,6 +153,26 @@ namespace Cliente.Veterinaria
             };
 
             _animalesForm.Activate();
+        }
+
+        private void verAnimalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this._verAnimalesForm is null || _verAnimalesForm.IsDisposed)
+            {
+                this._verAnimalesForm = new VerTodosAnimalesForm();
+                _verAnimalesForm.WindowState = FormWindowState.Maximized;
+                _verAnimalesForm.MdiParent = this;
+                _verAnimalesForm.Show();
+
+                this.menuStrip1.Visible = false;
+
+            }
+            _verAnimalesForm.FormClosed += (s, args) =>
+            {
+                this.menuStrip1.Visible = true;
+            };
+
+            _verAnimalesForm.Activate();
         }
     }
 }

@@ -126,7 +126,8 @@ VALUES (@nombre, @peso, @edad, @clienteId, @especieId);";
 
             string consulta = "DELETE FROM Animales WHERE ID = @id";
             setearConsulta(consulta);
-                      
+            insertarParametro("@id", animal.ID.ToString());
+
             int RowsAffected = ejecutarConsulta();
 
             return RowsAffected > 0;

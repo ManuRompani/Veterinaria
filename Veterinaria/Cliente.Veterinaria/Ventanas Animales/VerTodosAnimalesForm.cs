@@ -21,22 +21,45 @@ namespace Cliente.Veterinaria.Ventanas_Animales
         {
             InitializeComponent();
             _animalDao = new AnimalDAO();
-            List<Animal> _listaAnimales = new List<Animal>();
+            _listaAnimales = new List<Animal>();
         }
 
 
         public void cargarAnimalesDataGridView()
         {
+
             try
             {
-                _listadoAnimales = animalDAO.getAllAnimals();
-                dgvListaAnimales.DataSource = _listadoAnimales;
+                _listaAnimales = _animalDao.getAllAnimals();
+                dataGridView1.DataSource = _listaAnimales;
             }
             catch
             {
                 MessageBox.Show("Error al cargar los animales");
             }
 
+        }
+
+        private void VerTodosAnimalesForm_Load(object sender, EventArgs e)
+        {
+            this.cargarAnimalesDataGridView();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.cargarAnimalesDataGridView();
+                MessageBox.Show("Ya actualizado");
+            }
+            catch {
+                MessageBox.Show("Error al recargar");
+            }
         }
     }
 }
