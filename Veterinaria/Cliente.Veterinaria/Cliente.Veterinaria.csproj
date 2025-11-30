@@ -59,6 +59,12 @@
     <Compile Include="ClientesForm.Designer.cs">
       <DependentUpon>ClientesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas Animales\VerReportePesosAnimales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas Animales\VerReportePesosAnimales.Designer.cs">
+      <DependentUpon>VerReportePesosAnimales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas Especies\EspeciesForm.cs">
       <SubType>Form</SubType>
     </Compile>

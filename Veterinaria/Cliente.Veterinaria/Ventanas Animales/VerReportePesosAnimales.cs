@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Cliente.Veterinaria.Ventanas_Animales
 {
-    public partial class EliminarAnimalesForm : Form
+    public partial class VerReportePesosAnimales : Form
     {
-        public EliminarAnimalesForm()
+        public VerReportePesosAnimales()
         {
             InitializeComponent();
         }
