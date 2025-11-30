@@ -28,7 +28,19 @@ namespace Cliente.Veterinaria.Ventanas_Animales
             try
             {
                 _listadoAnimales = animalDAO.getAllAnimals();
-                dgvListaAnimales.DataSource = _listadoAnimales;
+                var datosAMostrar = _listadoAnimales.Select(animal => new 
+                {
+                    ID = animal.ID,
+                    Nombre = animal.Nombre,
+                    Peso = animal.Peso,
+                    Edad = animal.Edad,
+                    ClienteDueño = animal.ClienteDueño.NombreCompleto,
+                    Especie = animal.Especie.Nombre
+                }).ToList();
+
+                dgvListaAnimales.DataSource = datosAMostrar;
+
+                
             }
             catch
             {
@@ -42,24 +54,37 @@ namespace Cliente.Veterinaria.Ventanas_Animales
             cargarAnimalesDGV();
         }
 
-
         /*Boton para eliminar animal el cual te pregunta si enserio queres eliminarlo*/
         private void btnEliminarAnimal_Click(object sender, EventArgs e)
         {
-            if (dgvListaAnimales.CurrentRow != null && dgvListaAnimales.CurrentRow.DataBoundItem is Animal animalSeleccionado)
+            if (dgvListaAnimales.CurrentRow != null && dgvListaAnimales.CurrentRow.Index >= 0)
             {
-                DialogResult resultado = MessageBox.Show
-                    (
-                    $"¿Seguro quiere eliminar a '{animalSeleccionado.Nombre}'?", "¿Confirmar eliminar al animal?",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Warning,
-                    MessageBoxDefaultButton.Button2
-                    );
 
-                if (resultado == DialogResult.Yes)
+                int idAnimal = Convert.ToInt32(dgvListaAnimales.CurrentRow.Cells["ID"].Value);
+
+                Animal animalSelect = _listadoAnimales.FirstOrDefault(a => a.ID == idAnimal);
+
+                if(animalSelect != null)
                 {
-                    eliminarAnimal(animalSeleccionado);
+                    DialogResult resultado = MessageBox.Show
+                   (
+                   $"¿Seguro quiere eliminar a '{animalSelect.Nombre}'?", "¿Confirmar eliminar al animal?",
+                   MessageBoxButtons.YesNo,
+                   MessageBoxIcon.Warning,
+                   MessageBoxDefaultButton.Button2
+                   );
+
+                    if (resultado == DialogResult.Yes)
+                    {
+                        eliminarAnimal(animalSelect);
+                    }
                 }
+
+
+            }
+            else
+            {
+                MessageBox.Show("Hay que seleccionar un animal para eliminarlo.");
             }
         }
 

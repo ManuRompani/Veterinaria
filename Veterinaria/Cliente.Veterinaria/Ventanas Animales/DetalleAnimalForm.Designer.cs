@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetalleAnimalForm));
             this.cboxAnimales = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tboxID = new System.Windows.Forms.TextBox();
@@ -240,9 +241,10 @@
             this.Controls.Add(this.tboxID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboxAnimales);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DetalleAnimalForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DetalleAnimalForm";
+            this.Text = "Detalle de Animal";
             this.Load += new System.EventHandler(this.DetalleAnimalForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

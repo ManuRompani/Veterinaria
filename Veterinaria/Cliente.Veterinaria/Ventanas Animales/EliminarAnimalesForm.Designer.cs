@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EliminarAnimalesForm));
             this.dgvListaAnimales = new System.Windows.Forms.DataGridView();
             this.btnEliminarAnimal = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
@@ -87,6 +88,7 @@
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnEliminarAnimal);
             this.Controls.Add(this.dgvListaAnimales);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EliminarAnimalesForm";
             this.Text = "Eliminar Animales";
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaAnimales)).EndInit();

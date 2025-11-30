@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarClienteForm));
             this.btnAgregarCLiente = new System.Windows.Forms.Button();
             this.tboxDNI = new System.Windows.Forms.TextBox();
             this.tboxTelefono = new System.Windows.Forms.TextBox();
@@ -169,11 +170,12 @@
             this.Controls.Add(this.tboxTelefono);
             this.Controls.Add(this.tboxDNI);
             this.Controls.Add(this.btnAgregarCLiente);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(396, 443);
             this.MinimumSize = new System.Drawing.Size(396, 443);
             this.Name = "AgregarClienteForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AgregarClienteForm";
+            this.Text = "Agregar Clientes";
             this.Load += new System.EventHandler(this.AgregarClienteForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

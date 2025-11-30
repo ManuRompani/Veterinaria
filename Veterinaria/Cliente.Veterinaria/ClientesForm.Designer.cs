@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientesForm));
             this.tboxBuscarDNI = new System.Windows.Forms.TextBox();
             this.lblBuscarDNI = new System.Windows.Forms.Label();
             this.btnBuscarDNI = new System.Windows.Forms.Button();
@@ -109,8 +110,9 @@
             this.Controls.Add(this.btnBuscarDNI);
             this.Controls.Add(this.lblBuscarDNI);
             this.Controls.Add(this.tboxBuscarDNI);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ClientesForm";
-            this.Text = "ClientesForm";
+            this.Text = "Clientes";
             this.Load += new System.EventHandler(this.ClientesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);

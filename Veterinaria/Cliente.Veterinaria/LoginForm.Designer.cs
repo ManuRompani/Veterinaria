@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblPass = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -113,11 +114,12 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.tboxPass);
             this.Controls.Add(this.tboxName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(517, 391);
             this.MinimumSize = new System.Drawing.Size(517, 391);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LoginForm";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
