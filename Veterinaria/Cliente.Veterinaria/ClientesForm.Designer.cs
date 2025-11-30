@@ -30,6 +30,14 @@
         {
             this.SuspendLayout();
             // 
+            // ConfiguracionForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(999, 586);
+            this.Name = "ConfiguracionForm";
+            this.Text = "ConfiguracionForm";
+
             // ClientesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -37,6 +45,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "ClientesForm";
             this.Text = "ClientesForm";
+
             this.ResumeLayout(false);
 
         }

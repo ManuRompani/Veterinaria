@@ -79,7 +79,6 @@ namespace Cliente.Veterinaria
                 Edad = edad
             };
 
-
             nuevoAnimal.ClienteDueño = new Services.Veterinaria.Model.Cliente { Dni = (int)cmbCliente.SelectedValue };
             nuevoAnimal.Especie = new Especie { ID = (int)cmbEspecie.SelectedValue };
         }
