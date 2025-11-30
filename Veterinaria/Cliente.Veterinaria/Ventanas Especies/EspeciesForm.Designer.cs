@@ -51,10 +51,14 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "INFORMES PESO POR ESPECIE";
             // 
-            // InicioForm
+            // EspeciesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(989, 508);
+            this.Name = "EspeciesForm";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResumeLayout(false);
 
         }
 

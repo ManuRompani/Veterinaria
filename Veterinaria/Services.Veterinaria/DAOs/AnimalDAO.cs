@@ -31,7 +31,7 @@ namespace Services.Veterinaria.DAOs
                     Nombre = _lector.GetString(1),
                     Peso = _lector.GetDecimal(2),
                     Edad = _lector.GetInt32(3),
-                    Cliente = new Cliente { Dni = _lector.GetInt32(4) },
+                    ClienteDueño = new Cliente { Dni = _lector.GetInt32(4) },
                     Especie = new Especie { ID = _lector.GetInt32(5) }
                 };
                 ListaAnimales.Add(animal);
@@ -105,7 +105,7 @@ VALUES (@nombre, @peso, @edad, @clienteId, @especieId);";
             insertarParametro("@nombre", animal.Nombre);
             insertarParametro("@peso", animal.Peso.ToString());
             insertarParametro("@edad", animal.Edad.ToString());
-            insertarParametro("@Cliente", animal.Cliente.Dni.ToString());
+            insertarParametro("@Cliente", animal.ClienteDueño.Dni.ToString());
             insertarParametro("@Especie", animal.Especie.ID.ToString());
 
             int RowsAffected = ejecutarConsulta();
@@ -155,7 +155,7 @@ VALUES (@nombre, @peso, @edad, @clienteId, @especieId);";
                 insertarParametro("@nombre", animal.Nombre);
                 insertarParametro("@peso", animal.Peso.ToString());
                 insertarParametro("@edad", animal.Edad.ToString());
-                insertarParametro("@cliente", animal.Cliente.Dni.ToString());
+                insertarParametro("@cliente", animal.ClienteDueño.Dni.ToString());
                 insertarParametro("@especie", animal.Especie.ID.ToString());
                 insertarParametro("@id", animal.ID.ToString());
 

@@ -102,6 +102,7 @@
     </Compile>
     <EmbeddedResource Include="Ventanas Animales\EliminarAnimalesForm.resx">
       <DependentUpon>EliminarAnimalesForm.cs</DependentUpon>
+      <LastGenOutput>EliminarAnimalesForm.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas Animales\ReportePesosAnimalesForm.resx">
       <DependentUpon>ReportePesosAnimalesForm.cs</DependentUpon>
