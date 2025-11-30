@@ -118,22 +118,14 @@
             // agregarEspecieToolStripMenuItem
             // 
             this.agregarEspecieToolStripMenuItem.Name = "agregarEspecieToolStripMenuItem";
-<<<<<<< HEAD
-            this.agregarEspecieToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-=======
             this.agregarEspecieToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
->>>>>>> origin/manuel
             this.agregarEspecieToolStripMenuItem.Text = "Agregar Especie";
             this.agregarEspecieToolStripMenuItem.Click += new System.EventHandler(this.agregarEspecieToolStripMenuItem_Click);
             // 
             // editarEspecieToolStripMenuItem
             // 
             this.editarEspecieToolStripMenuItem.Name = "editarEspecieToolStripMenuItem";
-<<<<<<< HEAD
-            this.editarEspecieToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-=======
             this.editarEspecieToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
->>>>>>> origin/manuel
             this.editarEspecieToolStripMenuItem.Text = "Editar Especie";
             this.editarEspecieToolStripMenuItem.Click += new System.EventHandler(this.editarEspecieToolStripMenuItem_Click);
             // 
