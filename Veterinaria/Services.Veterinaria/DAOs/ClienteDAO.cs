@@ -47,6 +47,7 @@ namespace Services.Veterinaria.DAOs
             }
         }
 
+
         /// <summary>
         /// Devuelve un listado (DataTale) de Clientes con la cantidad de Animales que poseen.
         /// Columnas: DNI, Nombre, Apellido, Telefono, Cantidad de Animales
@@ -280,5 +281,6 @@ namespace Services.Veterinaria.DAOs
                 desconectar();
             }
         }
+
     }
 }
