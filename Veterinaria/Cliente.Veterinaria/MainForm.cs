@@ -51,27 +51,8 @@ namespace Cliente.Veterinaria
             _clientesForm.Activate();
         }
 
-
-
         private void configuraciónToolStripMenuItem_Click(object sender, EventArgs e) { }
 
-        private void animalesToolStripMenuItem_Click(object sender, EventArgs e)
-
-        {
-            // IsDisposed es un booleano que se pone en true cuando se cierra un formulario, los recursos se liberan y este no puede ser reutilizado
-            // Entonces validamos si se encuentra en ese estado o si es null y en caso de que se cumpla alguna de las condiciones creamos uno nuevo
-
-            if (this._animalesForm is null || _animalesForm.IsDisposed)
-            {
-                this._animalesForm = new AgregarAnimalesForm();
-                _animalesForm.WindowState = FormWindowState.Maximized;
-                _animalesForm.MdiParent = this;
-                _animalesForm.Show();
-            }
-
-            _animalesForm.Activate();
-
-        }
 
         private void especiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -88,13 +69,8 @@ namespace Cliente.Veterinaria
 
             _especiesForm.Activate();
         }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void agregarEspecieToolStripMenuItem_Click(object sender, EventArgs e)
+
         {
             if (this._agregarEspeciesForm is null || _agregarEspeciesForm.IsDisposed)
             {
@@ -118,6 +94,49 @@ namespace Cliente.Veterinaria
             }
 
             _editarEspeciesForm.Activate();
+        }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        //============ANIMALES TOOLSTRIP=========================
+        private void animalesToolStripMenuItem_Click(object sender, EventArgs e)
+
+        {
+            // IsDisposed es un booleano que se pone en true cuando se cierra un formulario, los recursos se liberan y este no puede ser reutilizado
+            // Entonces validamos si se encuentra en ese estado o si es null y en caso de que se cumpla alguna de las condiciones creamos uno nuevo
+
+            if (this._animalesForm is null || _animalesForm.IsDisposed)
+            {
+                this._animalesForm = new AgregarAnimalesForm();
+                _animalesForm.WindowState = FormWindowState.Maximized;
+                _animalesForm.MdiParent = this;
+                _animalesForm.Show();
+            }
+
+            _animalesForm.Activate();
+
+        }
+
+        private void agregarAnimalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this._animalesForm is null || _animalesForm.IsDisposed)
+            {
+                this._animalesForm = new AgregarAnimalesForm();
+                _animalesForm.WindowState = FormWindowState.Maximized;
+                _animalesForm.MdiParent = this;
+                _animalesForm.Show();
+
+                this.menuStrip1.Visible = false;
+
+            }
+            _animalesForm.FormClosed += (s, args) =>
+            {
+                this.menuStrip1.Visible = true;
+            };
+
+            _animalesForm.Activate();
         }
     }
 }
